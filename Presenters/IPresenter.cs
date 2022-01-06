@@ -10,11 +10,8 @@ namespace BookKeeper.Presenters
 {
     public interface IPresenter<IBaseItem>
     {
-        void Add(IBaseItem item);
         void Add(PopupForm popup);
-        void Remove(int index);
-        void Remove(IBaseItem item);
-        void Remove(PopupForm popup);
+        void Remove(ListButton button);
         void RemakeItems();
     }
 }

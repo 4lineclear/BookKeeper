@@ -27,7 +27,7 @@ namespace BookKeeper.Model.Repositories
 
             _users = new Lazy<List<UserItem>>(() =>
             {
-                using (var reader = new StreamReader(_xmlFilePath))
+                using (StreamReader reader = new StreamReader(_xmlFilePath))
                 {
                     return (List<UserItem>)_serializer.Deserialize(reader);
                 }
@@ -42,45 +42,38 @@ namespace BookKeeper.Model.Repositories
             _users.Value.Clear();
             Lazy<List<UserItem>> temp = new Lazy<List<UserItem>>(() =>
             {
-                using (var reader = new StreamReader(_xmlFilePath))
+                using (StreamReader reader = new StreamReader(_xmlFilePath))
                 {
                     return (List<UserItem>)_serializer.Deserialize(reader);
                 }
             });
             _users.Value.AddRange(temp.Value);
         }
-        public IEnumerable<UserItem> GetAllItems()
+        public List<UserItem> GetAllItems()
         {
             return _users.Value;
         }
-
         public UserItem GetItem(int id)
         {
             return _users.Value[id];
         }
         public void CreateBaseItem()
         {
-            var users = new List<UserItem> {
+            List<UserItem> users = new List<UserItem> {
                 new UserItem("Default User",0)
-
             };
             SaveToFile(users);
         }
         public void SaveToFile(List<UserItem> users)
         {
-            using (var writer = new StreamWriter(_xmlFilePath, false))
+            using (StreamWriter writer = new StreamWriter(_xmlFilePath, false))
             {
                 _serializer.Serialize(writer, users);
             }
         }
-
-        public void SaveItem(int id, UserItem user)
+        public void AddItem(string name)
         {
-            _users.Value[id] = user;
-        }
-
-        public void AddItem(UserItem user)
-        {
+            UserItem user = new UserItem(name, NextID() + 1);
             _users.Value.Add(user);
         }
         public void EditItem(UserItem item, int index)
@@ -105,12 +98,6 @@ namespace BookKeeper.Model.Repositories
                 UpdateIDs();
             }
         }
-
-        public void RemoveItem(UserItem item)
-        {
-            _users.Value.Remove(item);
-            UpdateIDs();
-        }
         public void UpdateIDs()
         {
             for (int i = 0; i < _users.Value.Count;i++)
@@ -118,15 +105,13 @@ namespace BookKeeper.Model.Repositories
                 _users.Value[i].ID = i;
             }
         }
-        public int IndexOf(UserItem item)
+        public int NextID()
         {
-            return _users.Value.IndexOf(item);
-        }
-        public int LastID()
-        {
-            return _users.Value.Last().ID;
-        }
+            if (_users.Value.Count != 0)
+                return _users.Value.Last().ID;
 
+            return 0;
+        }
         public int Count { get => _users.Value.Count; }
     }
 }

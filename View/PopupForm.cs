@@ -47,13 +47,10 @@ namespace BookKeeper.View
             confirmAction = true;
             this.Close();
         }
-        public void OutputText(out string text)
+        public bool OutputText(out string text)
         {
-            text = "";
-            if (confirmAction)
-            {
-                text = PopupTextBox.Text;
-            }
+            text = PopupTextBox.Text;
+            return confirmAction && !string.IsNullOrWhiteSpace(text);
         }
     }
 }

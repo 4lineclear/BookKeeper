@@ -23,7 +23,6 @@ namespace BookKeeper
             SettingsButton.Image = Resources.ImageService.SettingsButtonIcon;
             AddUserButton.Image = Resources.ImageService.AddButtonIcon;
             EditUsersButton.Image = Resources.ImageService.EditButtonIcon;
-
         }
         private void MainForm_Load(object sender, EventArgs e)
         {

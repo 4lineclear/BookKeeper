@@ -16,10 +16,11 @@ namespace BookKeeper
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            var repository = new UserRepository(Application.StartupPath);
-            var view = new MainForm();
 
-            var presenter = new UserPresenter(repository,view);
+            UserRepository repository = new UserRepository(Application.StartupPath);
+            MainForm view = new MainForm();
+
+            UserPresenter presenter = new UserPresenter(repository,view);
 
             Application.Run(view);
         }

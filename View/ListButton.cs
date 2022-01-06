@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookKeeper.Model.Items;
 using BookKeeper.Presenters;
+using static System.Windows.Forms.Control;
 
 namespace BookKeeper.View
 {
     public class ListButton : Button
     {
-        public int ID;
         public ListButton(UserItem item, Size size, UserPresenter presenter)
         {
             this.Presenter = presenter;
@@ -26,6 +26,7 @@ namespace BookKeeper.View
             this.DeleteButton.ImageAlign = ContentAlignment.MiddleCenter;
             this.DeleteButton.Dock = DockStyle.Right;
             this.DeleteButton.Visible = false;
+            this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Click += new EventHandler(DeleteButton_Click);
             //
             // EditButton
@@ -36,13 +37,14 @@ namespace BookKeeper.View
             this.EditButton.ImageAlign = ContentAlignment.MiddleCenter;
             this.EditButton.Dock = DockStyle.Right;
             this.EditButton.Visible = false;
+            this.EditButton.Name = "EditButton";
             this.EditButton.Click += new EventHandler(EditButton_Click);
             //
             // ListButton(this)
             //
             this.AutoSize = false;
-            this.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Location = new System.Drawing.Point(3, 3);
+            this.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            this.Location = new Point(3, 3);
             this.Name = item.Name + "Button";
             this.Size = size;
             this.Text = item.Name;
@@ -50,7 +52,7 @@ namespace BookKeeper.View
             this.UseVisualStyleBackColor = true;
             this.Controls.Add(EditButton);
             this.Controls.Add(DeleteButton);
-            this.ID = item.ID;
+            this.Name = "ListButton";
         }
         public void EnableEditMode()
         {
@@ -64,15 +66,11 @@ namespace BookKeeper.View
         }
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            this.Presenter.Remove(this.ID);
+            this.Presenter.Remove(this);
         }
         private void EditButton_Click(object sender, EventArgs e)
         {
-            Presenter.EditItem(this.ID);
-        }
-        public override string ToString()
-        {
-            return $"Text:{this.Text} TabIndex:{this.TabIndex} ID:{this.ID}";
+            Presenter.EditItem(this);
         }
 
         private readonly Button DeleteButton;

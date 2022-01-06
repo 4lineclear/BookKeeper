@@ -8,8 +8,8 @@ namespace BookKeeper.Model.Items
 {
     public interface IBaseItem
     {
-        public string Name { get; set; }
-        public int ID { get; set; }
-        public bool Equals(IBaseItem other);
+        string Name { get; set; }
+        int ID { get; set; }
+        bool Equals(IBaseItem other);
     }
 }
