@@ -94,6 +94,14 @@ namespace BookKeeper.View
                 ListButtonPanel.Controls[i].Width = changedSize;
             }
         }
+        public int GetButtonIndex(ListButton button)
+            => ListButtonPanel.Controls.IndexOf(button);
+        public void RemoveButton(ListButton button)
+            => ListButtonPanel.Controls.Remove(button);
+        public void AddButton(ListButton button)
+            => ListButtonPanel.Controls.Add(button);
+        public void ClearButtons()
+            => ListButtonPanel.Controls.Clear();
         public UserPresenter Presenter
         {
             private get;

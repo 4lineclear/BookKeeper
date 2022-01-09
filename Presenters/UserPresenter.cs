@@ -31,7 +31,7 @@ namespace BookKeeper.Presenters
         }
         public void EditItem(ListButton button)
         {
-            int index = MainPanel.ListButtonPanel.Controls.GetChildIndex(button);
+            int index = MainPanel.GetButtonIndex(button);
             if (new PopupForm("Edit User", "Name", Repository.GetItem(index).Name).OutputText(out string text))
             {
                 Repository.EditItemName(text, index);
@@ -40,11 +40,11 @@ namespace BookKeeper.Presenters
         }
         public void Remove(ListButton button)
         {
-            int index = MainPanel.ListButtonPanel.Controls.GetChildIndex(button);
+            int index = MainPanel.GetButtonIndex(button);
             if (index < Repository.Count && index >= 0)
             {
                 Repository.RemoveItem(index);
-                MainPanel.ListButtonPanel.Controls.Remove(button);
+                MainPanel.RemoveButton(button);
             }
         }
         private void AddUserToView(UserItem user)
@@ -56,7 +56,7 @@ namespace BookKeeper.Presenters
             else
                 size  = new System.Drawing.Size(338, 40);
 
-            MainPanel.ListButtonPanel.Controls.Add(new ListButton(user, size, this));
+            MainPanel.AddButton(new ListButton(user, size, this));
         }
         private void AddAllUsersToView()
         {
@@ -68,10 +68,8 @@ namespace BookKeeper.Presenters
         public void RemakeItems()
         {
             Repository.RemakeRepo();
-            MainPanel.ListButtonPanel.Controls.Clear();
+            MainPanel.ClearButtons();
             AddAllUsersToView();
         }
-        public int GetIndex(ListButton button) =>
-            MainPanel.ListButtonPanel.Controls.GetChildIndex(button);
     }
 }

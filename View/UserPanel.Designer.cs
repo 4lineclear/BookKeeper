@@ -53,7 +53,7 @@ namespace BookKeeper.View
             this.MainPanel.Controls.Add(this.ListButtonPanel, 2, 3);
             this.MainPanel.Controls.Add(this.AddUserButton, 2, 8);
             this.MainPanel.Location = new System.Drawing.Point(0, 0);
-            this.MainPanel.Name = "MainMenuPanel";
+            this.MainPanel.Name = "MainPanel";
             this.MainPanel.RowCount = 9;
             this.MainPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11005F));
             this.MainPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11005F));
@@ -164,7 +164,7 @@ namespace BookKeeper.View
         private System.Windows.Forms.Label MainTitle;
         private System.Windows.Forms.Button EditUsersButton;
         private System.Windows.Forms.Label UserLabel;
-        public System.Windows.Forms.FlowLayoutPanel ListButtonPanel;
+        private System.Windows.Forms.FlowLayoutPanel ListButtonPanel;
         private System.Windows.Forms.Button AddUserButton;
         private System.Windows.Forms.Button SettingsButton;
     }
