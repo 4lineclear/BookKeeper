@@ -18,33 +18,40 @@ namespace BookKeeper.View
         [Category("Node Attributes")]
         public TablePanelNode ChildPanel
         {
-            get{
-                return Type == NodeType.Leaf ? this : _childPanel;
-            }
-            set{
-                if (Type != NodeType.Leaf)
-                    _childPanel = value;
-            }
+            get => Type.IsLeaf() ? this : _childPanel;
+
+            set => _childPanel = Type.IsLeaf() ? this : value;
         }
 
         private TablePanelNode _parentPanel;
         
         [Category("Node Attributes")]
-        public TablePanelNode ParentPanel { 
-            get { 
-                return Type == NodeType.Root ? this : _parentPanel; 
-            } 
-            set {
-                if (Type != NodeType.Root)
-                    _parentPanel = value;
-            } 
-        }
-        
-        public enum NodeType
-        {
-            Root,
-            Parent,
-            Leaf
+        public TablePanelNode ParentPanel {
+            get => Type.IsRoot() ? this : _parentPanel;
+
+            set => _parentPanel = Type.IsRoot() ? this : value;
         }
     }
+    public enum NodeType
+    {
+        Root,
+        Parent,
+        Leaf
+    }
+    static class NodeMethods
+    {
+        public static bool IsRoot(this NodeType node)
+        {
+            return node == NodeType.Root;
+        }
+        public static bool IsParent(this NodeType node)
+        {
+            return node == NodeType.Parent;
+        }
+        public static bool IsLeaf(this NodeType node)
+        {
+            return node == NodeType.Leaf;
+        }
+    }
+
 }
