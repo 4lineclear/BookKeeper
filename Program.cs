@@ -20,7 +20,7 @@ namespace BookKeeper
             UserRepository repository = new UserRepository(Application.StartupPath);
             MainForm view = new MainForm();
 
-            UserPresenter presenter = new UserPresenter(repository,view,view.MainPanel);
+            UserPresenter presenter = new UserPresenter(repository,view.MainPanel);
 
             Application.Run(view);
         }

@@ -29,48 +29,49 @@ namespace BookKeeper.View
         /// </summary>
         private void InitializeComponent()
         {
-            this.MainMenuPanel = new View.TablePanelNode();
+            this.MainPanel = new View.TablePanelNode();
             this.SettingsButton = new System.Windows.Forms.Button();
             this.EditUsersButton = new System.Windows.Forms.Button();
-            this.MainMenuTitle = new System.Windows.Forms.Label();
+            this.MainTitle = new System.Windows.Forms.Label();
             this.UserLabel = new System.Windows.Forms.Label();
-            this.UserFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.ListButtonPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.AddUserButton = new System.Windows.Forms.Button();
-            this.MainMenuPanel.SuspendLayout();
+            this.MainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // MainMenuPanel
+            // MainPanel
             // 
-            this.MainMenuPanel.ColumnCount = 4;
-            this.MainMenuPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.MainMenuPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.MainMenuPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.MainMenuPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.MainMenuPanel.Controls.Add(this.SettingsButton, 0, 8);
-            this.MainMenuPanel.Controls.Add(this.EditUsersButton, 3, 8);
-            this.MainMenuPanel.Controls.Add(this.MainMenuTitle, 0, 0);
-            this.MainMenuPanel.Controls.Add(this.UserLabel, 2, 2);
-            this.MainMenuPanel.Controls.Add(this.UserFlowLayoutPanel, 2, 3);
-            this.MainMenuPanel.Controls.Add(this.AddUserButton, 2, 8);
-            this.MainMenuPanel.Location = new System.Drawing.Point(0, 0);
-            this.MainMenuPanel.Name = "MainMenuPanel";
-            this.MainMenuPanel.RowCount = 9;
-            this.MainMenuPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11005F));
-            this.MainMenuPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11005F));
-            this.MainMenuPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11005F));
-            this.MainMenuPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11005F));
-            this.MainMenuPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11005F));
-            this.MainMenuPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11005F));
-            this.MainMenuPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11227F));
-            this.MainMenuPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.1137F));
-            this.MainMenuPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.1137F));
-            this.MainMenuPanel.Size = new System.Drawing.Size(704, 681);
-            this.MainMenuPanel.TabIndex = 1;
+            this.MainPanel.ColumnCount = 4;
+            this.MainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.MainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.MainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.MainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.MainPanel.Controls.Add(this.SettingsButton, 0, 8);
+            this.MainPanel.Controls.Add(this.EditUsersButton, 3, 8);
+            this.MainPanel.Controls.Add(this.MainTitle, 0, 0);
+            this.MainPanel.Controls.Add(this.UserLabel, 2, 2);
+            this.MainPanel.Controls.Add(this.ListButtonPanel, 2, 3);
+            this.MainPanel.Controls.Add(this.AddUserButton, 2, 8);
+            this.MainPanel.Location = new System.Drawing.Point(0, 0);
+            this.MainPanel.Name = "MainMenuPanel";
+            this.MainPanel.RowCount = 9;
+            this.MainPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11005F));
+            this.MainPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11005F));
+            this.MainPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11005F));
+            this.MainPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11005F));
+            this.MainPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11005F));
+            this.MainPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11005F));
+            this.MainPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11227F));
+            this.MainPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.1137F));
+            this.MainPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.1137F));
+            this.MainPanel.Size = new System.Drawing.Size(704, 681);
+            this.MainPanel.TabIndex = 1;
             // 
             // SettingsButton
             // 
             this.SettingsButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SettingsButton.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SettingsButton.Image = Resources.ImageService.SettingsButtonIcon;
             this.SettingsButton.Location = new System.Drawing.Point(3, 603);
             this.SettingsButton.Name = "SettingsButton";
             this.SettingsButton.Size = new System.Drawing.Size(170, 75);
@@ -83,6 +84,7 @@ namespace BookKeeper.View
             // 
             this.EditUsersButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EditUsersButton.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.EditUsersButton.Image = Resources.ImageService.EditButtonIcon;
             this.EditUsersButton.Location = new System.Drawing.Point(531, 603);
             this.EditUsersButton.Name = "EditUsersButton";
             this.EditUsersButton.Size = new System.Drawing.Size(170, 75);
@@ -92,19 +94,19 @@ namespace BookKeeper.View
             this.EditUsersButton.UseVisualStyleBackColor = true;
             this.EditUsersButton.Click += new System.EventHandler(this.EditUsersButton_Click);
             // 
-            // MainMenuTitle
+            // MainTitle
             // 
-            this.MainMenuTitle.AutoSize = true;
-            this.MainMenuPanel.SetColumnSpan(this.MainMenuTitle, 4);
-            this.MainMenuTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainMenuTitle.Font = new System.Drawing.Font("Segoe UI", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MainMenuTitle.Location = new System.Drawing.Point(3, 0);
-            this.MainMenuTitle.Name = "MainMenuTitle";
-            this.MainMenuPanel.SetRowSpan(this.MainMenuTitle, 2);
-            this.MainMenuTitle.Size = new System.Drawing.Size(698, 150);
-            this.MainMenuTitle.TabIndex = 0;
-            this.MainMenuTitle.Text = "Book Keeper";
-            this.MainMenuTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.MainTitle.AutoSize = true;
+            this.MainPanel.SetColumnSpan(this.MainTitle, 4);
+            this.MainTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainTitle.Font = new System.Drawing.Font("Segoe UI", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.MainTitle.Location = new System.Drawing.Point(3, 0);
+            this.MainTitle.Name = "MainTitle";
+            this.MainPanel.SetRowSpan(this.MainTitle, 2);
+            this.MainTitle.Size = new System.Drawing.Size(698, 150);
+            this.MainTitle.TabIndex = 0;
+            this.MainTitle.Text = "Book Keeper";
+            this.MainTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UserLabel
             // 
@@ -117,23 +119,24 @@ namespace BookKeeper.View
             this.UserLabel.TabIndex = 1;
             this.UserLabel.Text = "User";
             // 
-            // UserFlowLayoutPanel
+            // ListButtonPanel
             // 
-            this.UserFlowLayoutPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MainMenuPanel.SetColumnSpan(this.UserFlowLayoutPanel, 2);
-            this.UserFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.UserFlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.UserFlowLayoutPanel.Location = new System.Drawing.Point(355, 228);
-            this.UserFlowLayoutPanel.Name = "UserFlowLayoutPanel";
-            this.MainMenuPanel.SetRowSpan(this.UserFlowLayoutPanel, 5);
-            this.UserFlowLayoutPanel.Size = new System.Drawing.Size(346, 369);
-            this.UserFlowLayoutPanel.TabIndex = 2;
-            this.UserFlowLayoutPanel.WrapContents = false;
+            this.ListButtonPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.MainPanel.SetColumnSpan(this.ListButtonPanel, 2);
+            this.ListButtonPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ListButtonPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.ListButtonPanel.Location = new System.Drawing.Point(355, 228);
+            this.ListButtonPanel.Name = "ListButtonPanel";
+            this.MainPanel.SetRowSpan(this.ListButtonPanel, 5);
+            this.ListButtonPanel.Size = new System.Drawing.Size(346, 369);
+            this.ListButtonPanel.TabIndex = 2;
+            this.ListButtonPanel.WrapContents = false;
             // 
             // AddUserButton
             // 
             this.AddUserButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AddUserButton.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AddUserButton.Image = Resources.ImageService.AddButtonIcon;
             this.AddUserButton.Location = new System.Drawing.Point(355, 603);
             this.AddUserButton.Name = "AddUserButton";
             this.AddUserButton.Size = new System.Drawing.Size(170, 75);
@@ -148,20 +151,20 @@ namespace BookKeeper.View
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(704, 681);
-            this.Controls.Add(this.MainMenuPanel);
+            this.Controls.Add(this.MainPanel);
             this.Name = "UserPanel";
-            this.MainMenuPanel.ResumeLayout(false);
-            this.MainMenuPanel.PerformLayout();
+            this.MainPanel.ResumeLayout(false);
+            this.MainPanel.PerformLayout();
             this.ResumeLayout(false);
         }
 
         #endregion
 
-        private View.TablePanelNode MainMenuPanel;
-        private System.Windows.Forms.Label MainMenuTitle;
+        private View.TablePanelNode MainPanel;
+        private System.Windows.Forms.Label MainTitle;
         private System.Windows.Forms.Button EditUsersButton;
         private System.Windows.Forms.Label UserLabel;
-        public System.Windows.Forms.FlowLayoutPanel UserFlowLayoutPanel;
+        public System.Windows.Forms.FlowLayoutPanel ListButtonPanel;
         private System.Windows.Forms.Button AddUserButton;
         private System.Windows.Forms.Button SettingsButton;
     }

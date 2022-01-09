@@ -7,15 +7,12 @@ namespace BookKeeper.Presenters
 {
     public class UserPresenter : IPresenter<UserItem>
     {
-        private MainForm View { get; }
         private UserPanel MainPanel { get; }
         private UserRepository Repository { get; }
-        public UserPresenter(UserRepository repository, MainForm view, UserPanel mainPanel)
+        public UserPresenter(UserRepository repository, UserPanel mainPanel)
         {
             this.Repository = repository;
-            this.View = view;
             this.MainPanel = mainPanel;
-            view.Presenter = this;
             mainPanel.Presenter = this;
             AddAllUsersToView();
         }
@@ -34,7 +31,7 @@ namespace BookKeeper.Presenters
         }
         public void EditItem(ListButton button)
         {
-            int index = MainPanel.UserFlowLayoutPanel.Controls.GetChildIndex(button);
+            int index = MainPanel.ListButtonPanel.Controls.GetChildIndex(button);
             if (new PopupForm("Edit User", "Name", Repository.GetItem(index).Name).OutputText(out string text))
             {
                 Repository.EditItemName(text, index);
@@ -43,11 +40,11 @@ namespace BookKeeper.Presenters
         }
         public void Remove(ListButton button)
         {
-            int index = MainPanel.UserFlowLayoutPanel.Controls.GetChildIndex(button);
+            int index = MainPanel.ListButtonPanel.Controls.GetChildIndex(button);
             if (index < Repository.Count && index >= 0)
             {
                 Repository.RemoveItem(index);
-                MainPanel.UserFlowLayoutPanel.Controls.Remove(button);
+                MainPanel.ListButtonPanel.Controls.Remove(button);
             }
         }
         private void AddUserToView(UserItem user)
@@ -59,7 +56,7 @@ namespace BookKeeper.Presenters
             else
                 size  = new System.Drawing.Size(338, 40);
 
-            MainPanel.UserFlowLayoutPanel.Controls.Add(new ListButton(user, size, this));
+            MainPanel.ListButtonPanel.Controls.Add(new ListButton(user, size, this));
         }
         private void AddAllUsersToView()
         {
@@ -71,10 +68,10 @@ namespace BookKeeper.Presenters
         public void RemakeItems()
         {
             Repository.RemakeRepo();
-            MainPanel.UserFlowLayoutPanel.Controls.Clear();
+            MainPanel.ListButtonPanel.Controls.Clear();
             AddAllUsersToView();
         }
         public int GetIndex(ListButton button) =>
-            MainPanel.UserFlowLayoutPanel.Controls.GetChildIndex(button);
+            MainPanel.ListButtonPanel.Controls.GetChildIndex(button);
     }
 }

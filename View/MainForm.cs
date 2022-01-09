@@ -21,9 +21,5 @@ namespace BookKeeper
             InitializeComponent();
             this.Icon = Resources.ImageService.MainIcon;
         }
-        public UserPresenter Presenter {
-            private get;
-            set;
-        }
     }
 }

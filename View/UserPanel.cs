@@ -16,18 +16,15 @@ namespace BookKeeper.View
         public UserPanel()
         {
             InitializeComponent();
-            //SettingsButton.Image = Resources.ImageService.SettingsButtonIcon;
-            //AddUserButton.Image = Resources.ImageService.AddButtonIcon;
-            //EditUsersButton.Image = Resources.ImageService.EditButtonIcon;
         }
         private void AddUserButton_Click(object sender, EventArgs e)
         {
             PopupForm popup = new PopupForm("Create User", "Username");
             Presenter.Add(popup);
-            if (UserFlowLayoutPanel.Controls.Count > 8)
+            if (ListButtonPanel.Controls.Count > 8)
             {
                 UpdateButtonsSize(320);
-                UserFlowLayoutPanel.AutoScroll = true;
+                ListButtonPanel.AutoScroll = true;
             }
         }
         private void CancelUsersButton_Click(object sender, EventArgs e)
@@ -36,7 +33,7 @@ namespace BookKeeper.View
 
             DisableEdit();
 
-            if (UserFlowLayoutPanel.Controls.Count < 8)
+            if (ListButtonPanel.Controls.Count < 8)
             {
                 UpdateButtonsSize(338);
             }
@@ -45,9 +42,9 @@ namespace BookKeeper.View
         {
             EnableEdit();
 
-            for (int i = 0; i < UserFlowLayoutPanel.Controls.Count; i++)
+            for (int i = 0; i < ListButtonPanel.Controls.Count; i++)
             {
-                ((ListButton)UserFlowLayoutPanel.Controls[i]).EnableEditMode();
+                ((ListButton)ListButtonPanel.Controls[i]).EnableEditMode();
             }
         }
         private void SaveUsersButton_Click(object sender, EventArgs e)
@@ -56,12 +53,12 @@ namespace BookKeeper.View
 
             Presenter.Save();
 
-            for (int i = 0; i < UserFlowLayoutPanel.Controls.Count; i++)
+            for (int i = 0; i < ListButtonPanel.Controls.Count; i++)
             {
-                ((ListButton)UserFlowLayoutPanel.Controls[i]).DisableEditMode();
+                ((ListButton)ListButtonPanel.Controls[i]).DisableEditMode();
             }
 
-            if (UserFlowLayoutPanel.Controls.Count < 8)
+            if (ListButtonPanel.Controls.Count < 8)
             {
                 UpdateButtonsSize(338);
             }
@@ -92,9 +89,9 @@ namespace BookKeeper.View
         }
         private void UpdateButtonsSize(int changedSize)
         {
-            for (int i = 0; i < UserFlowLayoutPanel.Controls.Count; i++)
+            for (int i = 0; i < ListButtonPanel.Controls.Count; i++)
             {
-                UserFlowLayoutPanel.Controls[i].Width = changedSize;
+                ListButtonPanel.Controls[i].Width = changedSize;
             }
         }
         public UserPresenter Presenter
