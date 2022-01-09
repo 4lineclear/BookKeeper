@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.MainMenuPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.MainMenuPanel = new View.TablePanelNode();
             this.SettingsButton = new System.Windows.Forms.Button();
             this.EditUsersButton = new System.Windows.Forms.Button();
             this.MainMenuTitle = new System.Windows.Forms.Label();
@@ -159,7 +159,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel MainMenuPanel;
+        private View.TablePanelNode MainMenuPanel;
         private System.Windows.Forms.Label MainMenuTitle;
         private System.Windows.Forms.Button EditUsersButton;
         private System.Windows.Forms.Label UserLabel;
