@@ -8,10 +8,10 @@ using BookKeeper.View;
 
 namespace BookKeeper.Presenters
 {
-    public interface IPresenter<IBaseItem>
+    public interface IPresenter<T> where T : Model.Items.IBaseItem
     {
-        void Add(PopupForm popup);
-        void Remove(ListButton button);
+        void Add(IPopupForm<T> popup);
+        void Remove(IListButton<T> button);
         void RemakeItems();
     }
 }

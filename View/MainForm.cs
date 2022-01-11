@@ -15,7 +15,6 @@ namespace BookKeeper
 
     public partial class MainForm : Form
     {
-        //public List<ListButton> userButtons = new List<ListButton>();
         public MainForm()
         {
             InitializeComponent();

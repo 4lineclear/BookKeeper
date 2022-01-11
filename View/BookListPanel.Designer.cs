@@ -1,7 +1,7 @@
 ﻿
 namespace BookKeeper.View
 {
-    partial class UserPanel
+    partial class BookListPanel
     {
         /// <summary> 
         /// Required designer variable.
@@ -30,12 +30,12 @@ namespace BookKeeper.View
         private void InitializeComponent()
         {
             this.MainPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.SettingsButton = new System.Windows.Forms.Button();
             this.EditItemsButton = new System.Windows.Forms.Button();
             this.MainTitle = new System.Windows.Forms.Label();
-            this.UserLabel = new System.Windows.Forms.Label();
+            this.BookListLabel = new System.Windows.Forms.Label();
             this.ListButtonPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.AddItemButton = new System.Windows.Forms.Button();
+            this.BackButton = new System.Windows.Forms.Button();
             this.MainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,10 +46,10 @@ namespace BookKeeper.View
             this.MainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.MainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.MainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.MainPanel.Controls.Add(this.SettingsButton, 0, 8);
+            this.MainPanel.Controls.Add(this.BackButton, 0, 8);
             this.MainPanel.Controls.Add(this.EditItemsButton, 3, 8);
             this.MainPanel.Controls.Add(this.MainTitle, 0, 0);
-            this.MainPanel.Controls.Add(this.UserLabel, 2, 2);
+            this.MainPanel.Controls.Add(this.BookListLabel, 2, 2);
             this.MainPanel.Controls.Add(this.ListButtonPanel, 2, 3);
             this.MainPanel.Controls.Add(this.AddItemButton, 2, 8);
             this.MainPanel.Location = new System.Drawing.Point(0, 0);
@@ -67,29 +67,16 @@ namespace BookKeeper.View
             this.MainPanel.Size = new System.Drawing.Size(704, 681);
             this.MainPanel.TabIndex = 1;
             // 
-            // SettingsButton
-            // 
-            this.SettingsButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SettingsButton.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.SettingsButton.Image = Resources.ImageService.SettingsButtonIcon;
-            this.SettingsButton.Location = new System.Drawing.Point(3, 603);
-            this.SettingsButton.Name = "SettingsButton";
-            this.SettingsButton.Size = new System.Drawing.Size(170, 75);
-            this.SettingsButton.TabIndex = 6;
-            this.SettingsButton.Text = "Settings";
-            this.SettingsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.SettingsButton.UseVisualStyleBackColor = true;
-            // 
-            // EditBookListButton
+            // EditItemsButton
             // 
             this.EditItemsButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EditItemsButton.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.EditItemsButton.Image = Resources.ImageService.EditButtonIcon;
             this.EditItemsButton.Location = new System.Drawing.Point(531, 603);
-            this.EditItemsButton.Name = "EditBookListButton";
+            this.EditItemsButton.Name = "EditItemsButton";
             this.EditItemsButton.Size = new System.Drawing.Size(170, 75);
             this.EditItemsButton.TabIndex = 4;
-            this.EditItemsButton.Text = "Edit Users";
+            this.EditItemsButton.Text = "Edit Lists";
             this.EditItemsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.EditItemsButton.UseVisualStyleBackColor = true;
             this.EditItemsButton.Click += new System.EventHandler(this.EditItemsButton_Click);
@@ -110,14 +97,15 @@ namespace BookKeeper.View
             // 
             // BookListLabel
             // 
-            this.UserLabel.AutoSize = true;
-            this.UserLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.UserLabel.Font = new System.Drawing.Font("Segoe UI", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.UserLabel.Location = new System.Drawing.Point(355, 153);
-            this.UserLabel.Name = "BookListLabel";
-            this.UserLabel.Size = new System.Drawing.Size(170, 72);
-            this.UserLabel.TabIndex = 1;
-            this.UserLabel.Text = "User";
+            this.BookListLabel.AutoSize = true;
+            this.MainPanel.SetColumnSpan(this.BookListLabel, 2);
+            this.BookListLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.BookListLabel.Font = new System.Drawing.Font("Segoe UI", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BookListLabel.Location = new System.Drawing.Point(355, 153);
+            this.BookListLabel.Name = "BookListLabel";
+            this.BookListLabel.Size = new System.Drawing.Size(346, 72);
+            this.BookListLabel.TabIndex = 1;
+            this.BookListLabel.Text = "Book List";
             // 
             // ListButtonPanel
             // 
@@ -132,37 +120,51 @@ namespace BookKeeper.View
             this.ListButtonPanel.TabIndex = 2;
             this.ListButtonPanel.WrapContents = false;
             // 
-            // AddBookListButton
+            // AddItemButton
             // 
             this.AddItemButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AddItemButton.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.AddItemButton.Image = Resources.ImageService.AddButtonIcon;
             this.AddItemButton.Location = new System.Drawing.Point(355, 603);
-            this.AddItemButton.Name = "AddBookListButton";
+            this.AddItemButton.Name = "AddItemButton";
             this.AddItemButton.Size = new System.Drawing.Size(170, 75);
             this.AddItemButton.TabIndex = 3;
-            this.AddItemButton.Text = "Add User";
+            this.AddItemButton.Text = "Add List";
             this.AddItemButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.AddItemButton.UseVisualStyleBackColor = true;
             this.AddItemButton.Click += new System.EventHandler(this.AddItemButton_Click);
             // 
-            // UserPanel
+            // BackButton
+            // 
+            this.BackButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BackButton.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BackButton.Image = Resources.ImageService.BackButtonIcon;
+            this.BackButton.Location = new System.Drawing.Point(3, 603);
+            this.BackButton.Name = "BackButton";
+            this.BackButton.Size = new System.Drawing.Size(170, 75);
+            this.BackButton.TabIndex = 5;
+            this.BackButton.Text = "Back";
+            this.BackButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BackButton.UseVisualStyleBackColor = true;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
+            // 
+            // BookListPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(704, 681);
+            this.ChildPanel = this;
             this.Controls.Add(this.MainPanel);
-            this.Name = "UserPanel";
+            this.Name = "BookListPanel";
+            this.Size = new System.Drawing.Size(704, 681);
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
             this.ResumeLayout(false);
+
         }
-
         #endregion
-
         private System.Windows.Forms.TableLayoutPanel MainPanel;
         private System.Windows.Forms.Label MainTitle;
-        private System.Windows.Forms.Label UserLabel;
-        private System.Windows.Forms.Button SettingsButton;
+        private System.Windows.Forms.Label BookListLabel;
+        private System.Windows.Forms.Button BackButton;
     }
 }

@@ -1,5 +1,4 @@
 ﻿using BookKeeper.Model.Items;
-using BookKeeper.Presenters;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,9 +11,9 @@ using System.Windows.Forms;
 
 namespace BookKeeper.View
 {
-    public partial class UserPanel : DerivedPanel<UserItem, UserItem, BookListItem>
+    public partial class BookListPanel : DerivedPanel<BookListItem,UserItem,BookListItem>
     {
-        public UserPanel()
+        public BookListPanel()
         {
             InitializeComponent();
         }
@@ -22,6 +21,5 @@ namespace BookKeeper.View
         {
             base.BringToFront();
         }
-
     }
 }

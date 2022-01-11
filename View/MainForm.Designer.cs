@@ -1,4 +1,6 @@
-﻿namespace BookKeeper
+﻿using BookKeeper.Model.Items;
+
+namespace BookKeeper
 {
     partial class MainForm
     {
@@ -28,23 +30,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.MainPanel = new BookKeeper.View.UserPanel();
+            this.MainUserPanel = new BookKeeper.View.UserPanel();
+            this.MainBookListPanel = new BookKeeper.View.BookListPanel();
             this.SuspendLayout();
             // 
-            // MainPanel
+            // MainBookListPanel
             // 
-            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainPanel.Location = new System.Drawing.Point(0, 0);
-            this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(704, 681);
-            this.MainPanel.TabIndex = 0;
+            this.MainBookListPanel.ParentPanel = MainUserPanel;
+            this.MainBookListPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainBookListPanel.Location = new System.Drawing.Point(0, 0);
+            this.MainBookListPanel.Name = "MainBookListPanel";
+            this.MainBookListPanel.Size = new System.Drawing.Size(704, 681);
+            this.MainBookListPanel.TabIndex = 0;
+            // 
+            // MainUserPanel
+            // 
+            this.MainUserPanel.ChildPanel = MainBookListPanel;
+            this.MainUserPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainUserPanel.Location = new System.Drawing.Point(0, 0);
+            this.MainUserPanel.Name = "MainUserPanel";
+            this.MainUserPanel.Size = new System.Drawing.Size(704, 681);
+            this.MainUserPanel.TabIndex = 0;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(704, 681);
-            this.Controls.Add(this.MainPanel);
+            this.Controls.Add(this.MainUserPanel);
+            this.Controls.Add(this.MainBookListPanel);
             this.Name = "MainForm";
             this.Text = "Book Keeper";
             this.ResumeLayout(false);
@@ -53,7 +67,8 @@
 
         #endregion
 
-        public View.UserPanel MainPanel;
+        public BookKeeper.View.BookListPanel MainBookListPanel;
+        public BookKeeper.View.UserPanel MainUserPanel;
     }
 }
 
